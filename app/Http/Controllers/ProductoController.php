@@ -72,6 +72,9 @@ class ProductoController extends Controller
                 'modelo' => 'required',
                 'tipo_producto' => 'required',
                 'precio_costo' => 'required',
+                'precio_unitario' => 'required',
+                'precio_mayoreo' => 'required',
+                'id_proveedor' => 'required'
             ]);
 
             if ($validacion->fails()) {
@@ -86,7 +89,7 @@ class ProductoController extends Controller
                 if ($productoEncontrado) {
 
                     $productoEncontrado->marca = $request->marca;
-                    $productoEncontrado->model = $request->model;
+                    $productoEncontrado->modelo = $request->modelo;
                     $productoEncontrado->tipo_producto = $request->tipo_producto;
                     $productoEncontrado->precio_costo = $request->precio_costo;
                     $productoEncontrado->precio_unitario = $request->precio_unitario;
